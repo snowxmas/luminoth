@@ -40,7 +40,7 @@ class PredictorNetwork(object):
 
         with graph.as_default():
             self.image_placeholder = tf.placeholder(
-                tf.float32, (None, None, 3)
+                tf.float32, (375, 500, 3)
             )
             image_tf, _, process_meta = dataset.preprocess(
                 self.image_placeholder
