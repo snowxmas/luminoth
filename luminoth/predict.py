@@ -186,6 +186,13 @@ def predict_video(network, path, only_classes=None, ignore_classes=None,
 def predict(path_or_dir, config_files, checkpoint, override_params,
             output_path, save_media_to, min_prob, max_detections, only_class,
             ignore_class, debug):
+    return do_predict( path_or_dir, config_files, checkpoint, override_params,
+            output_path, save_media_to, min_prob, max_detections, only_class,
+            ignore_class, debug )
+
+def do_predict(path_or_dir, config_files, checkpoint, override_params,
+            output_path, save_media_to, min_prob, max_detections, only_class,
+            ignore_class, debug):
     """Obtain a model's predictions.
 
     Receives either `config_files` or `checkpoint` in order to load the correct
