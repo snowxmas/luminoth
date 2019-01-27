@@ -7,6 +7,7 @@ DEFAULT_LUMINOTH_HOME = os.path.expanduser('~/.luminoth')
 
 
 def get_luminoth_home(create_if_missing=True):
+    return "."
     """Returns Luminoth's homedir."""
     # Get Luminoth's home directory (the default one or the overridden).
     path = os.path.abspath(
