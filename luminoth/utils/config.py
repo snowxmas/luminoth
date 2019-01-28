@@ -2,6 +2,7 @@ import inspect
 import os.path
 import tensorflow as tf
 import yaml
+import contextlib
 
 from easydict import EasyDict
 
@@ -201,7 +202,8 @@ def cleanup_config(config):
     """
     cleanup_keys = [REPLACE_KEY]
     for cleanup_key in cleanup_keys:
-        config.pop(cleanup_key, None)
+        with contextlib.suppress( AttributeError ):
+            config.pop(cleanup_key, None)
 
     for config_key in config:
         if isinstance(config[config_key], dict):
